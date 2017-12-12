@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<tbody>
+{% for user in all %}
+{% if user.username != "admin" %}
+<tr><td><div>&nbsp;<a style="text-decoration: none;" href="home/{{user.username}}" target="_newTab"><div  style="width: 160px; background: #EEEEEE;" align="middle"><img style="margin: 5px auto auto auto; height:150px; width:auto; max-width:150px;" title="{{user.faculty.Faculty_Name }}" src="{{ user.faculty.image.url }}" alt="{{user.faculty.Faculty_Name }}"><div><span style="font-variant: small-caps; font-size: 14px; background: #FFFFFF;">&nbsp;{{user.faculty.Faculty_Name }}&nbsp;</span></div></div></a></div></td><td><div align="justify"><font size="3"><span style="font-variant: small-caps;"><strong><u>{{user.faculty.Faculty_Name }}</u></strong></span><br /><em>{{user.faculty.Position }}</em><br><strong>eMail  :</strong> a{{user.faculty.Webmail }}<br /><strong>Phone :</strong> {{user.faculty.phone }}<br /><strong>Room No. :</strong> {{user.faculty.Room_Number }}<br /><br /></font></div></td></tr>
+
+{% endif %}
+{%endfor%}
+</tbody>
+{%endblock%}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="new2.js"></script>
+	<title>login here</title>
+	{% load staticfiles %}
+	<link href="{% static 'fac/tase.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<style>
+   body {
+
+  background-image:url("{% static 'fac/slide3.jpg' %}");
+  height=100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+}
+</style>
+
+<div class="login-page">
+  <div class="form">
+<img src ="{% static 'backgrounds/iitg.jpg' %}">
+    <br>  <b>First and Lat Name should be same as that in Intranet page</b>
+    <form class="login-form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+      <button>login</button>
+
+    </form>
+  </div>
+</div>
+   </body>
+</html>
+
+
+

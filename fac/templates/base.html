@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    {% block head %}
+    <meta charset="UTF-8">
+    <title></title>
+    {% endblock %}
+
+
+</head>
+<body>
+<style>
+   h1{
+background-color:orange;
+color:#66ffff;
+text-align:center;
+font-size:100px;
+text-shadow: -1px 0 2px black,0 1px 25px black,1px 0 5px black,0 -1px  5px black;
+}
+h1 i:first-child{
+font-size:80px;
+}
+</style>
+<br>
+ <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Faculty Page</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="#">Departments</a></li>
+                  <li> <a href="/fac/login">Login</a></li>
+
+              </ul>
+            <ul class="nav navbar-nav navbar-right">
+                                  <li><a href="/fac/password_reset/">Forgot Password</a></li>
+              <li><a href="/fac/register">SignUp</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+     <h1>
+             {% load static %}
+<img src="{% static "fac/images.png" %}" alt="My image"/><b>IIT G<i>UWAHATI</i> </b>
+
+</h1>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

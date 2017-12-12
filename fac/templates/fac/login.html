@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+function ChangeCaptcha()
+{
+var chars="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+var string_length=6;
+var ChangeCaptcha='';
+for(var i=0;i<string_length;i++){
+	var rnum=Math.floor(Math.random() * chars.length);
+	ChangeCaptcha += chars.substring(rnum,rnum+1);
+}
+document.getElementById('randomfield').value=ChangeCaptcha;
+}
+function check(){
+	if(document.getElementById('CaptchaEnter').value==document.getElementById('randomfield').value)
+{
+window.open('https://www.google.co.in','_self');
+
+}
+else
+{
+alert('recheck');
+
+}
+}
+
+</script>
+    {% load staticfiles %}
+    	<script src="new2.js"></script>
+	<title>login here</title>
+	<link href="{% static 'fac/tase.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<style>
+   body {
+
+  background-image:url("{% static 'fac/slide3.jpg' %}");
+  height=100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+}
+
+</style>
+  <h1 style="text-align:center;font-size:300%">Indian Institute of Technology-Guwahati</h1>
+
+
+
+
+<br><br>
+<div class="login-page">
+  <div class="form">
+<img src ="{% static 'backgrounds/iitg.jpg' %}"><br>
+
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+   <script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" data-sitekey="6LeKwDoUAAAAALS5jGRRDxcUTH3gVf4jZ-pXyzpY"></div>
+      <button type="submit" onclick="check()">Login</button>
+      <p class="message">Not registered? <a href="/fac/register">Create an account</a></p>
+    </form>
+  </div>
+</div>
+<html>
+
+
+
+
+

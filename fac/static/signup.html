@@ -1,0 +1,64 @@
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="signupcss.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        
+    </head>
+    <body>
+
+      <form action="index.html" method="post">
+      
+        <h1>Sign Up</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name">
+          
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="user_password">
+          
+          
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Biography:</label>
+          <textarea id="bio" name="user_bio"></textarea>
+        </fieldset>
+        <fieldset>
+        <label for="Department">Department:</label>
+        <select id="Department" name="user_dep">
+          <optgroup label="Department in IIT-G">
+            <option value="BSandBE">Biosciences and Bioengineering</option>
+            <option value="CE">Chemical Engineering</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Civil"> Civil Engineering</option>
+            <option value="CSE">Computer Science and Engineering</option>
+            <option value="Design">Design</option>
+			<option value="EEE">Electronics and Electrical Engineering</option>
+            <option value="HSS">Humanities and Social Sciences</option>
+            <option value="Mnc">Mathematics and Computing</option>
+			<option value="ME">Mechanical Engineering</option>
+            <option value="Physics">Physics</option>
+          </optgroup>
+        </select>
+        
+          <label>Interests:</label>
+          <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Development</label><br>
+            <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
+          <input type="checkbox" id="coding" value="interest coding" name="user_interest"><label class="light" for="business">Coding</label><br>
+          <input type="checkbox" id="sports" value="interest sports" name="user_interest"><label class="light" for="business">Sports</label><br>
+          <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label>
+        
+        </fieldset>
+        <button type="submit">Sign Up</button>
+      </form>
+      
+    </body>
+</html>

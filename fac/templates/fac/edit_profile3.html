@@ -1,0 +1,48 @@
+
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+      {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'fac/signupcss.css' %}"/>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+<style>
+   body {
+
+  background-image:url("{% static 'fac/2.jpg' %}");
+  height=100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+}
+
+</style>
+    <form method="post" action="/fac/edit_user3/" id="edit_user3" name="edit_user2">
+        {% csrf_token %}
+<h1>Edit Courses</h1>
+
+        <fieldset>
+          <legend><span class="number">5</span>Your Courses</legend>
+
+          <label for="Course">Title:</label>
+            <input type="text" name="Course" id="Course" ><br>
+
+
+            <label for="time">Year:</label>
+            <input type="text" name="time" id="time" ><br>
+
+
+                    <label for="Semester">Details:</label>
+   <input type="text" name="Semester" id="Semester" ><br>
+        <button type="submit">Submit</button>
+      </form>
+
+
+     </body>
+</html>
+
+
+

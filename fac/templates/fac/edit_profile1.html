@@ -1,0 +1,44 @@
+
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+      {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'fac/signupcss.css' %}"/>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+<style>
+   body {
+
+  background-image:url("{% static 'fac/2.jpg' %}");
+  height=100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+}
+
+</style>
+    <form method="post" action="/fac/edit_user1/" id="edit_user1" name="edit_user1">
+        {% csrf_token %}
+<h1>Edit Qualifications</h1>
+
+        <fieldset>
+          <legend><span class="number">3</span>Your Qualifications</legend>
+
+
+            <label for="Btech">Degree :</label>
+            <textarea rows="4" cols="50" name="Btech" id="Btech"  ></textarea>
+            <label for="Mtech">year(from-to):</label>
+            <textarea rows="4" cols="50" name="Mtech" id="Mtech" id="Mtech"  ></textarea>
+                 <label for="PHD">Institute and Any Other Details :</label>
+                 <textarea rows="4" cols="50" name="PHD" id="PHD" ></textarea>
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
+
+
+     </body>
+</html>
+

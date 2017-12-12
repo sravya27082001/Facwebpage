@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <form method="post" action="/fac/update/" id="update" name="update">
+        {% csrf_token %}
+  <label for="image">Image</label>
+            <input type="file" name="image" id="image" accept="image/">
+
+
+        <button type="submit">Submit</button>
+      </form>
+
+</body>
+</html>

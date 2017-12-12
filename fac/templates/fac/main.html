@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>Faculty-Responsive university staff personal page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="owwwlab.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <meta name="description" content="A theme for faculty profile page" />
+        <meta name="keywords" content="faculty profile, theme,css, html, jquery, transition, transform, 3d, css3" />
+       {% load staticfiles %}
+
+        <link rel="shortcut icon" href="../favicon.ico">
+
+        <!--CSS styles-->
+
+        <link rel="stylesheet" href="{% static 'fac/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'fac/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fac/perfect-scrollbar-0.4.5.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fac/magnific-popup.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fac/style.css' %}">
+        <link id="theme-style" rel="stylesheet" href="{% static 'fac/theme-style.css' %}">
+
+
+        <!--/CSS styles-->
+        <!--Javascript files-->
+        <script type="text/javascript" src="{% static 'fac/jquery-1.10.2.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fac/TweenMax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fac/jquery.touchSwipe.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fac/jquery.carouFredSel-6.2.1-packed.js' %}j"></script>
+
+        <script type="text/javascript" src="{% static 'fac/modernizr.custom.63321.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fac/jquery.dropdownit.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'fac/jquery.stellar.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fac/ScrollToPlugin.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'fac/bootstrap.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'fac/jquery.mixitup.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'fac/masonry.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'fac/perfect-scrollbar-0.4.5.with-mousewheel.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'fac/magnific-popup.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fac/custom.js' %}"></script>
+
+        <!--/Javascript files-->
+
+    </head>
+    <div>
+<style>
+    #profile .portrate {
+	background-image: url("{% static 'fac/iitg1.jpg' %}");
+
+	width: 125px;
+	margin: 0 auto;
+	height: 125px;
+	border-radius: 50%;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+
+</style>
+
+        <div id="wrapper">
+            <a href="#sidebar" class="mobilemenu"><i class="icon-reorder"></i></a>
+
+            <div id="sidebar">
+                <div id="main-nav">
+                    <div id="nav-container">
+                        <div id="profile" class="clearfix">
+                            <div class="portrate hidden-xs"></div>
+                            <div class="title">
+                                <h2>{{user.first_name}} {{user.last_name}}</h2>
+                                <h3>IIT Guwahati</h3>
+                            </div>
+
+                        </div>
+                        <ul id="navigation">
+                            <li>
+                              <a href="#biography">
+                                <div class="icon icon-user"></div>
+                                <div class="text">About Me</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#research">
+                                <div class="icon icon-book"></div>
+                              <div class="text">Projects</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#publications">
+                                <div class="icon icon-edit"></div>
+                                <div class="text">Qualifications and Experience</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#teaching">
+                                <div class="icon icon-time"></div>
+                                <div class="text">Teaching</div>
+                              </a>
+                            </li>
+                                                        <li>
+                              <a href="#questions">
+                                <div class="icon icon-time"></div>
+                                <div class="text">Questionary</div>
+                              </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="main">
+
+                <div id="biography" class="page home" data-pos="home">
+                     <marquee direction="left" scrollamount='8' onMouseOver="scrollAmount='1'" onMouseOut="scrollAmount='5'" >
+Welcome {{ user.first_name}} {{user.last_name}}
+</marquee>
+                    <div class="pageheader">
+			 <a href="/fac/logout" class="button">Logout</a>
+                         <a href="/fac/profile/edit" class="button">Edit</a>
+                            <a href="/fac/profile/change-password" class="button">Reset Password</a>
+                            <div class="headercontent">
+                                <div class="section-container">
+
+                                    <div class="row">
+                                        <div class="col-sm-2 visible-sm"></div>
+                                        <div class="col-sm-8 col-md-5">
+                                            <div class="biothumb">
+                                                <img alt="image" src="{{user.faculty.image.url}}" class="img-responsive">
+                                                <div class="overlay">
+
+                                                    <h1 class="">{{ user.first_name}} {{user.last_name}}</h1>
+                                                    <ul class="list-unstyled">
+                                                        <li>Indian Institute of Technology-Guwahati</li>
+							<li>Assam-781039</li>
+                                                    </ul>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix visible-sm visible-xs"></div>
+                                        <div class="col-sm-12 col-md-7">
+
+                                            <h3 class="title">Information</h3>
+                                           <ul class="list-unstyled">
+                                                        <ol>Department:{{user.faculty.department}}</ol>
+							<ol>Position:{{user.faculty.Position}}</ol>
+							<ol>webmail id:{{user.faculty.Webmail}}</ol>
+							<ol>Room no:{{user.faculty.Room_No}}</ol>
+							<ol>Phone no:{{user.faculty.phone}}</ol>
+							<ol>Fax:{{user.faculty.fax}}</ol>
+							<ol>About:{{user.faculty.About}}</ol>
+
+                                                    </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+
+
+                <div id="research" class="page">
+                    <div class="pageheader">
+                        <a href="/fac/profile/edit2" class="button">Edit</a>
+                        <div class="headercontent">
+
+                            </div>
+                        </div>
+
+                    <div class="pagecontents">
+
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="title text-center">
+                                    <h3>Projects Undertaken</h3>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <ul class="timeline">
+                                        {% for field in user.projects_set.all %}
+                                            <li class="open">
+                                                <div class="date">{{field.duration}}</div>
+                                                <div class="circle"></div>
+                                                <div class="data">
+                                                    <div class="subject">{{field.title}}</div>
+                                                    <div class="text row">
+                                                        <div class="col-md-2">
+                                                            {{field.role}}<br>
+                                                            {{field.Sponsorer}}
+                                                        </div>
+                                                        <div class="col-md-10">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+
+
+
+
+<div id="publications" class="page">
+
+                        <div class="pageheader">
+                            <a href="/fac/profile/edit4" class="button">Edit Experience</a>
+                            <a href="/fac/profile/edit1" class="button">Edit Education</a>
+                            <div class="headercontent">
+
+                            </div>
+                        </div>
+
+                   <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="title text-center">
+                                            <h3>Experience</h3>
+                                        </div>
+                                        <ul class="ul-dates">
+                                            {% for field in user.experience_set.all %}
+                                            <li>
+                                                <div class="dates">
+                                                    <span>{{field.year}}</span>
+
+                                                </div>
+                                                <div class="content">
+                                                    <h4>{{field.Position}}</h4>
+                                                    <p><em>{{field.Institute}}</em></p>
+                                                </div>
+                                            </li>
+                                           {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="title text-center">
+                                            <h3>Education</h3>
+                                        </div>
+                                        <ul class="ul-card">
+
+                                            {% for field in user.qualification_set.all %}
+                                            <li>
+                                                <div class="dy">
+                                                    <span class="degree">{{field.Btech}}</span><span class="year">{{field.Mtech}}</span>
+
+                                                </div>
+                                                <div class="description">
+
+                                                    <p class="where">{{field.PHD}}</p>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div></div></div>
+
+
+
+
+
+                               <div id="teaching" class="page">
+                    <div class="pageheader">
+                        <a href="/fac/profile/edit3" class="button">Edit</a>
+                        <div class="headercontent">
+                            <div class="section-container">
+
+                            </div>
+                        </div>
+                    </div>
+        <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="title text-center">
+                                        <h3>Teaching History</h3>
+                                    </div>
+                                    <ul class="ul-dates">
+                                         {% for field in user.teaching_set.all %}
+                                        <li>
+                                            <div class="dates">
+                                                <span>{{field.time}}</span>
+
+                                            </div>
+                                            <div class="content">
+                                                <h4>{{field.Course}}</h4>
+                                                <p>{{field.Semester}}</p>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+        </div></div></div>
+                                    <div id="questions" class="page">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+
+                            </div>
+                        </div>
+                    </div>
+        <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="title text-center">
+                                        <h3>Teaching History</h3>
+                                    </div>
+                                    <ul class="ul-dates">
+                                         {% for field in user.question_set.all %}
+                                        <li>
+                                            <div class="dates">
+                                                <span>{{field.name}}</span>
+
+                                            </div>
+                                            <div class="content">
+                                                <h4>{{field.que}}</h4>
+                                                    {% if field.ans == "NULL" %}
+                                                       <a href="/fac/profile/edit6" class="button">Post Answer</a>
+                                                {% endif  %}
+                                                {% if field.ans != "NULL" %}
+                                                <p>{{field.ans}}</p>
+                                                {% endif %}
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+
+    </body>
+</html>

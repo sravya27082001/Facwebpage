@@ -1,0 +1,74 @@
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+      {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'fac/signupcss.css' %}"/>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+<style>
+   body {
+
+  background-image:url("{% static 'fac/2.jpg' %}");
+  height=100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+}
+
+</style>
+    <form method="post" action="/fac/edit_user/" id="edit_user" name="edit_user" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1>Edit Profile Page</h1>
+        <p><b>*All information should be filled</b></p>
+        <fieldset>
+
+          <legend><span class="number">1</span>Your basic info</legend>
+
+
+
+            <label for="Webmail">Webmail:</label>
+             <input type="text" name="Webmail" id="Webmail"  ><br>
+            <label for="Room_No">Room_No:</label>
+             <input type="text" name="Room_No" id="Room_No" ><br>
+            <label for="fax">Fax:</label>
+             <input type="text" name="fax" id="fax" id="fax"  ><br>
+            <label for="About">About:</label>
+            <textarea rows="4" cols="50" name="About" id="About" ></textarea>
+            <label>Pic</label>
+            <input type="file" name="image" id="image">
+            <label for="phone">Phone:</label>
+             <input type="text" name="phone" id="phone"  ><br>
+        <label for="department">Department:</label>
+        <select id="department" name="department">
+          <optgroup label="Depparment in IIT-G">
+            <option value="Biosciences and Bioengineering">Biosciences and Bioengineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Chemistry"> Chemistry</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Computer Science &amp; Engineering">Computer Science &amp; Engineering</option>
+			<option value="Design">Design</option>
+            <option value="Electronics &amp; Electrical Engg.">Electronics &amp; Electrical Engg.</option>
+            <option value="Humanities and Social Sciences">Humanities and Social Sciences</option>
+			<option value="Mathematics">Mathematics</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+			<option value="Physics">Physics</option>
+          </optgroup>
+        </select>
+
+          <label>Position:</label>
+          <input type="checkbox" id="Position" value="Professor" name="Position"><label class="light" for="development">Professor</label><br>
+            <input type="checkbox" id="Position" value="Assistant Professor" name="Position"><label class="light" for="design">Assistant Professor</label><br>
+          <input type="checkbox" id="Position" value="Assosciate Professor" name="Position"><label class="light" for="business">Assosciate Professor</label>
+
+
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
+
+
+     </body>
+</html>

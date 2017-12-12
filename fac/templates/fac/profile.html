@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body><br>
+ <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Faculty Page</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="#">Departments</a></li>
+                   <li><a href="/fac/profile/edit/">EDIT</a></li>
+              </ul>
+            <ul class="nav navbar-nav navbar-right">
+                                  <li> <a href="/fac/logout">Logout</a></li>
+                                  <li><a href="/fac/profile/change-password">Reset Password</a></li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="container">
+<h1>Profile Page</h1>
+
+
+    <p>Faculty: {{user.faculty.Faculty_Name}}</p>
+    <p>Webmail: {{user.faculty.Webmail }}</p>
+    <p>Phone: {{user.faculty.phone}}</p>
+    <p>About: {{user.faculty.About}}</p>
+        <p>Fax: {{user.faculty.fax}}</p>
+    <p>Room: {{user.faculty.Room_No}}</p>
+        <p>Position:{{user.faculty.Position}}</p>
+        <p>Department:{{user.faculty.department}}</p>
+
+        <p>Intermediate: {{user.qualification.Experience}}</p>
+        <p>Mtech: {{user.qualification.Mtech}}</p>
+        <p>Btech: {{user.qualification.Btech}}</p>
+        <p>PHD: {{user.qualification.PHD}}</p>
+    {% for field in user.experience_set.all %}
+    <tr><td>{{forloop.counter}}</td><td>
+            <p>Sponsorer: {{field.Position}}</p></td><td>
+            <p>year: {{field.year}}</p></td>
+            <p>Publications: {{field.Institute}}</p><td>
+            {%endfor%}
+
+</td></tr>
+  <p>Course_name {{user.teaching.Course}}</p>
+    <p>start_year: {{user.teaching.time}}</p>
+    <p>Fax: {{user.teaching.semester}}</p>
+
+</div>
+     </body>
+</html>
